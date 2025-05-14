@@ -1,0 +1,89 @@
+.paper > pre {
+    width: 450px;
+    overflow: auto;
+}
+
+.two > img {
+    width: 250px;
+}
+
+td > img {
+    width: 250px;
+}
+
+@media (max-width:760px) {
+    td > img {
+        display: none;
+    }
+    .tdimg {
+        display: none;
+        width: 0%;
+        padding: 0;
+    }
+    .tdcontent {
+        width: 100%;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.experience-section {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+.experience-header {
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.experience-entry {
+    display: flex;
+    margin-bottom: 15px;
+}
+.date-range {
+    width: 25%;
+    font-weight: bold;
+}
+.position-details {
+    width: 75%;
+}
+.position-title {
+    font-weight: bold;
+}
+.organization {
+    font-style: italic;
+}
+.description {
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+
+/* Top bar styling */
+.top-bar {
+    position: fixed;        /* Fixes the bar at the top */
+    top: 0;                 /* Ensures it sticks to the very top of the page */
+    width: 100%;            /* Full width */
+    background-color: #333; /* Dark background color */
+    color: white;           /* Text color */
+    text-align: center;     /* Center aligns the text */
+    padding: 10px 0;        /* Spacing inside the bar */
+    z-index: 1000;          /* High z-index to stay on top of other content */
+  }
+  
+  /* Style for the links in the top bar */
+  .top-bar a {
+    color: white;
+    padding: 0 15px;        /* Spacing between links */
+    text-decoration: none;  /* Remove underline */
+    font-size: 16px;
+  }
+  
+  .top-bar a:hover {
+    background-color: #555; /* Change color on hover */
+  }
