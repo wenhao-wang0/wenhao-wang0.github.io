@@ -36,14 +36,18 @@
 
 
 <div class="top-bar">
-  <div class="navbar-header" style="font-size:1.2em;margin-left: 50px;"> Wenhao Wang
-  </div  style="font-size:1.3em">
-  <a href="#Bio">Bio</a>
-  <a href="#Publications">Publications</a>
-  <a href="#Experience">Experience</a>
-  <a href="#Awards">Awards</a>
-  <a href="#Teaching">Teaching</a>
-  <a href="CV.pdf" target="_blank">CV</a>
+  <div class="navbar-header">Wenhao Wang</div>
+  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+  <div id="nav-links">
+    <a href="#Bio">Bio</a>
+    <a href="#Publications">Publications</a>
+    <a href="#Experience">Experience</a>
+    <a href="#Awards">Awards</a>
+    <a href="#Teaching">Teaching</a>
+    <a href="CV.pdf" target="_blank">CV</a>
+  </div>
 </div>
 
 
@@ -250,6 +254,12 @@
 
 <script xml:space="preserve" language="JavaScript">
 hideallbibs();
+</script>
+<script>
+function toggleMenu() {
+    var nav = document.getElementById("nav-links");
+    nav.classList.toggle("responsive");
+}
 </script>
 
 </body>
