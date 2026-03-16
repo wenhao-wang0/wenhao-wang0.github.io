@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Frontier AI Is Already Changing Security and Systems Research | Wenhao Wang</title>
+  <meta name="author" content="Wenhao Wang">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An essay on how frontier AI models are changing research workflows in security, systems, and applied cryptography.">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="navbar-header"><a href="../index.html#Bio">Wenhao Wang</a></div>
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div id="nav-links">
+      <a href="../index.html#Bio">Home</a>
+      <a href="../index.html#Publications">Publications</a>
+      <a href="../index.html#Blogs">Blogs</a>
+      <a href="../CV.pdf" target="_blank">CV</a>
+    </div>
+  </div>
+
+  <div class="blog-shell">
+    <div class="blog-breadcrumb">
+      <a href="../index.html#Blogs">Blogs</a> / Essay
+    </div>
+
+    <div class="blog-article">
+      <span class="blog-eyebrow">Essay</span>
+      <h1 class="blog-article-title">Frontier AI Is Already Changing Security and Systems Research</h1>
+      <div class="blog-article-meta">Written March 16, 2026</div>
+      <div class="blog-article-lead">
+        <span class="blog-lead-label">TL;DR</span>
+        <p>
+          AI first felt useful to me as a better grammar checker. Over time, it became something much more
+          consequential: a tool that can help with proof ideas, implementation checks, systems prototyping,
+          and the overall pace of research.
+        </p>
+      </div>
+
+      <p>For a while, I thought AI was mostly a better grammar checker.</p>
+
+      <p>
+        When I first used ChatGPT while preparing my PhD applications, it was useful for local edits:
+        grammar, sentence structure, and style. But when I tried to have it rewrite my statement of purpose
+        end-to-end, it failed in exactly the way that mattered. It could smooth the expressions, but it
+        could not understand the central parts of my story, especially the shift in my research interests
+        to blockchain security.
+      </p>
+
+      <p>
+        That early experience taught me something important that is still true today: AI can help with
+        expression, but it cannot replace ownership of an idea.
+      </p>
+
+      <p>
+        After I joined Fan's group, I started testing AI on more technical work. At that stage, it was
+        unreliable on hard math. On lattice-based cryptography problems, it made algebraic mistakes. On
+        hardness reductions and proof arguments, it often sounded confident while quietly going wrong. But
+        even then, it was already showing signs of something more interesting than a writing tool.
+      </p>
+
+      <p>
+        Back in Fall 2023, I remember getting stuck for two days on a proof in an information-theoretical
+        MPC project. I needed to show that the randomness prepared by the protocol was uniformly random,
+        and I was circling around the right argument without seeing it. Arbitrarily, I asked ChatGPT
+        whether there was a useful one-to-one mapping hidden in the linear structure in the math. I did
+        not expect much. Instead, it gave me the key insight. It did not finish the proof for me, and I
+        would not say it "solved" the problem. But it unlocked the most important step.
+      </p>
+
+      <p>
+        That was the first time I felt that AI was not just accelerating writing or syntax, but
+        participating in mathematical search instead.
+      </p>
+
+      <p>
+        The same thing happened in programming. Back then, AI was already good at translation work. If I
+        had pseudocode, it could often turn it into Rust or Python surprisingly well. It still needed human
+        testing, and it could not reliably debug across a full system, but it dramatically reduced the time
+        of going from idea to prototype.
+      </p>
+
+      <p>
+        So even before reasoning models became truly strong, AI had already become useful for local proof
+        steps and pseudocode-to-code translation. It was not yet an autonomous research collaborator, but
+        it was no longer trivial.
+      </p>
+
+      <p>
+        The real inflection point came when the power of reasoning models crossed a threshold.
+      </p>
+
+      <p>
+        One simple but revealing test I used was quant-interview-style probability problems when ChatGPT
+        Pro was first released. An example is this: if a standard 52-card deck is shuffled
+        uniformly, what is the expected index of the first ace? The clean solution is to notice that the 4
+        aces split the 48 non-aces into 5 segments. By symmetry, the expected size of the first segment is
+        48/5, so the expected first ace appears at position 1 + 48/5 = 53/5 = 10.6. The AI reasoning
+        model, using more canonical methods, arrived at the correct answer. What impressed me was not just
+        that the model got the right answer, but that it could reach correct answers on problems that
+        require non-obvious setup.
+      </p>
+
+      <p>
+        By 2025, frontier reasoning models were no longer only writing assistants. They became useful for
+        crypto proofs, sanity-checking derivations, and generating candidate proof strategies that I could
+        then verify myself. The important thing is not that the model independently did my research. It did
+        not. The point is that it could materially reduce the time-to-insight on non-trivial technical
+        work.
+      </p>
+
+      <p>
+        I saw this clearly while working on proofs for our submission on a distributed BaseFold project
+        earlier this year. The core proof idea was simple: if the original BaseFold protocol is sound, then
+        the distributed protocol should also be sound. But actually writing the reduction for the real
+        protocol requires much more effort, because the protocol spans pages of details. After some
+        iteration, the model helped construct the right reduction structure. It made the most
+        time-consuming part, getting the proof skeleton right, much faster.
+      </p>
+
+      <p>
+        A more recent experience surprised me even more. I asked a frontier model to check whether our
+        numerical simulation code for our spam-MEV theoretical model correctly implemented the formulas from
+        the paper. The task was only to check the implementation. But the model went further: it found a
+        missing term in the reasoning itself. The omission did not materially change the final plots, but
+        that was not the point. The point was that the model was willing and able to audit the math, not
+        just compare code to equations mechanically.
+      </p>
+
+      <p>That is a qualitatively different capability from what we had even a year ago.</p>
+
+      <p>Coding has changed too, although in a different way.</p>
+
+      <p>
+        For smaller projects, it was already useful. For example, it could generate a rough Path-ORAM
+        prototype of around a thousand lines in Rust with enough prompting and testing. But when I worked
+        on larger distributed SNARK systems, the weakness was obvious: the model had weak global
+        understanding, struggled across files, and made multi-component testing cumbersome. Even AI-native
+        IDEs often underperformed when the underlying algorithm was too specialized or too mathematically
+        dense.
+      </p>
+
+      <p>
+        In 2024, Fangyan and I spent roughly four to five months implementing the Cirrus distributed SNARK
+        codebase, with a lot of back-and-forth. Part of that was simply that neither of us is a trained
+        software engineer. Large research implementations were expensive and slow.
+      </p>
+
+      <p>
+        In one recent distributed BaseFold prototype, a 5k+ line benchmark implementation was completed in
+        roughly two weeks, with only part of that time spent on direct coding. Although this is not a
+        perfect apples-to-apples comparison, the compression in timeline is still extraordinary.
+      </p>
+
+      <p>
+        The newest coding agents like Codex push this further, as they can work over an entire workspace,
+        run unit tests, refactor code across files, optimize algorithms, and make style changes from one
+        instruction. On our recent spam-MEV project, there were more than ten figures from numerical
+        simulations, and changing styling or improving simulation speed no longer meant a half-day of
+        annoying manual edits.
+      </p>
+
+      <p>
+        That kind of change sounds small until you live with it, and then you realize it changes the flow
+        of research entirely.
+      </p>
+
+      <p>
+        Across academic research, AI use is no longer marginal. In Wiley's 2025 survey of 2,430
+        researchers, 84% reported using AI in some part of their work and 85% said it improved their
+        efficiency. At the same time, only 41% felt they had adequate organizational support, 57% cited
+        lack of guidelines and training as a barrier, and 70% still relied on free tools. A workflow shift
+        has already happened, even if the norms around it are still catching up.
+      </p>
+
+      <p>
+        The broader shift is visible in systems and security research. A few years ago, a lot of research
+        time was spent on syntax, proof transcription, artifact building, plotting, refactoring, and the
+        dozens of local tasks that are necessary but not intellectually central. With AI, the path from
+        idea to prototype is shorter. The path from formula to implementation is shorter. The path from
+        suspected bug to tested fix is shorter. The work has not become automatic, and it has certainly not
+        become trustless. In fields where correctness matters, verification still belongs to the human
+        researcher. But the bottleneck has clearly moved upward. More of the scarce value now sits in
+        choosing the right problem, noticing the hidden assumption, deciding what not to trust, and knowing
+        how to verify the parts that matter.
+      </p>
+
+      <p>
+        For me, the answer is already clear from experience. AI first helped me polish sentences. Then it
+        helped with proof ideas and pseudocode-to-code translation. Now it can meaningfully accelerate
+        protocol construction, prototype systems, refactor implementations, run tests, and compress weeks of
+        technical work into days or even hours.
+      </p>
+
+      <p>
+        Labs that recognize this early, and support it, will move faster. Labs that refuse to
+        adapt will not preserve some "purer" version of research. They will just work slower.
+      </p>
+
+      <p>
+        <a href="https://newsroom.wiley.com/press-releases/press-release-details/2025/AI-Adoption-Jumps-to-84-Among-Researchers-as-Expectations-Undergo-Significant-Reality-Check/default.aspx">Source for the Wiley survey figures</a>
+      </p>
+
+      <a class="blog-back-link" href="../index.html#Blogs">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to blog section
+      </a>
+    </div>
+  </div>
+
+  <div style="margin-top:50px; padding:20px; text-align:center; border-top:1px solid #ddd; font-size:0.9em; color:#555;">
+    &copy; 2026 Wenhao Wang &nbsp;|&nbsp;
+    <i class="fas fa-envelope"></i> wenhao dot wang at yale dot edu
+    &nbsp;|&nbsp;
+    <a href="../CV.pdf" target="_blank" style="color:#555; text-decoration:none;">
+      <i class="fas fa-file-alt"></i> CV
+    </a>
+  </div>
+
+  <script>
+  function toggleMenu() {
+      var nav = document.getElementById("nav-links");
+      nav.classList.toggle("responsive");
+  }
+  </script>
+</body>
+</html>
