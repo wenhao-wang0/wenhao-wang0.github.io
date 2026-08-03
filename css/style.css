@@ -227,6 +227,64 @@ img {
     color: #c2410c;
 }
 
+/* Selected talks */
+.talk-list {
+    display: grid;
+    gap: 18px;
+}
+
+.talk-group {
+    padding: 20px 22px;
+    border: 1px solid #d8dee8;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.talk-group h3 {
+    margin: 0 0 12px;
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 1.22em;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.talk-group ul {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 22px;
+}
+
+.talk-group li {
+    padding-left: 2px;
+}
+
+.talk-group li span {
+    display: inline;
+}
+
+.talk-group .talk-date {
+    float: right;
+    margin-left: 20px;
+    color: #64748b;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.talk-recording {
+    display: inline-block;
+    margin-left: 6px;
+    color: #c4302b;
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.talk-recording:hover,
+.talk-recording:focus {
+    color: #ff0000;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .top-bar {
@@ -353,6 +411,16 @@ img {
 
     .publication-title {
         font-size: 1.35em;
+    }
+
+    .talk-group {
+        padding: 18px;
+    }
+
+    .talk-group .talk-date {
+        float: none;
+        display: block;
+        margin: 3px 0 0;
     }
 }
 
